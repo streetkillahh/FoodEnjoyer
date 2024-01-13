@@ -1,0 +1,28 @@
+﻿<Application x:Class="FoodEnjoyerWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FoodEnjoyerWPF"
+             Startup="OnStartup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!--PRIMARY-->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FFE4C4"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="Black"/>
+
+            <!--ACCENT-->
+
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#f40057"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#f40057"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

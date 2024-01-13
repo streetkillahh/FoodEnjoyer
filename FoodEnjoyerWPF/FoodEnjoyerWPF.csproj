@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Products\Borsh.png" />
+    <None Remove="Images\src\Back.png" />
+    <None Remove="Images\src\Bill.png" />
+    <None Remove="Images\src\Bin.png" />
+    <None Remove="Images\src\Cart.png" />
+    <None Remove="Images\src\Dessert.png" />
+    <None Remove="Images\src\Drink.png" />
+    <None Remove="Images\src\Exit.png" />
+    <None Remove="Images\src\History.png" />
+    <None Remove="Images\src\Hot.png" />
+    <None Remove="Images\src\Menu.png" />
+    <None Remove="Images\src\Restaurant.png" />
+    <None Remove="Images\src\Search.png" />
+    <None Remove="Images\src\Snack.png" />
+    <None Remove="Images\src\Soup.png" />
+    <None Remove="Images\src\User.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{d37e2a3e-8545-3a39-9f4f-31827c9124ab}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>4</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>d37e2a3e-8545-3a39-9f4f-31827c9124ab</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\src\Dessert.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.1.2" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Products\Borsh.png" />
+    <Resource Include="Images\src\Back.png" />
+    <Resource Include="Images\src\Bill.png" />
+    <Resource Include="Images\src\Bin.png" />
+    <Resource Include="Images\src\Cart.png" />
+    <Resource Include="Images\src\Drink.png" />
+    <Resource Include="Images\src\Exit.png" />
+    <Resource Include="Images\src\History.png" />
+    <Resource Include="Images\src\Hot.png" />
+    <Resource Include="Images\src\Menu.png" />
+    <Resource Include="Images\src\Restaurant.png" />
+    <Resource Include="Images\src\Search.png" />
+    <Resource Include="Images\src\Snack.png" />
+    <Resource Include="Images\src\Soup.png" />
+    <Resource Include="Images\src\User.png" />
+  </ItemGroup>
+
+</Project>

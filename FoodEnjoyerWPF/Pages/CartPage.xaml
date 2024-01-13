@@ -1,0 +1,162 @@
+﻿<Page x:Class="FoodEnjoyerWPF.Pages.CartPage"
+      xmlns:local="clr-namespace:FoodEnjoyerWPF.Pages"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CartPage">
+
+    <Grid Background="#FDD9B5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#FBCEB1">
+            <Image HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" Source="/Images/src/Cart.png"
+                   Height="30" Margin="10 0"/>
+            <TextBlock HorizontalAlignment="Left" 
+                       VerticalAlignment="Center" Text="Текущий заказ"
+                       FontFamily="TrebuchetMS" FontSize="15" FontWeight="Bold"/>
+        </StackPanel>
+        <ComboBox FontSize="14" x:Name="SetAddress" Width="250"
+                  materialDesign:HintAssist.Hint="Выберите Адрес"
+                  HorizontalAlignment="Center" VerticalAlignment="Top">
+
+        </ComboBox>
+        <Button Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" 
+                Height="30" Width="150"  Click="Back_Click" Content="Вернуться к меню"
+                FontSize="12" FontFamily="TrebuchetMS" x:Name="ButtonBack"
+                Margin="5" BorderBrush="Black"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="2" Margin="10" Background="#FBCEB1" CornerRadius="30"
+                    BorderBrush="Black" BorderThickness="2">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="Black" ShadowDepth="0" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center" VerticalAlignment="Top" 
+                               Text="Данные заказа" Margin="5"
+                               FontFamily="TrebuchetMS" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Grid.Row="2" x:Name="SumOrder"
+                               HorizontalAlignment="Left" VerticalAlignment="Center"
+                               Text="Сумма: " Margin="5" FontFamily="TrebuchetMS"
+                               FontSize="15"/>
+                    <TextBlock Grid.Row="2" x:Name="Ticket"
+                               HorizontalAlignment="Right" VerticalAlignment="Center"
+                               Text=" " Margin="5" FontFamily="TrebuchetMS"
+                               FontSize="15"/>
+                    <ComboBox Grid.Row="4" x:Name="DeliveryOption" Foreground="Black"
+                              HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                              Margin="5 0" FontFamily="TrebuchetMS"
+                              FontSize="15" Width="200" Height="30" 
+                              materialDesign:HintAssist.Hint="Способ получения">
+                        <ComboBoxItem Content="Зал"/>
+                        <ComboBoxItem Content="Доставка"/>
+                    </ComboBox>
+                    <ComboBox Grid.Row="6" x:Name="PaymentOption" Foreground="Black"
+                              HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                              Margin="5 0" FontFamily="TrebuchetMS"
+                              FontSize="15" Width="200" Height="30" 
+                              materialDesign:HintAssist.Hint="Способ оплаты">
+                        <ComboBoxItem Content="Картой"/>
+                        <ComboBoxItem Content="Наличными"/>
+                    </ComboBox>
+                    <StackPanel Grid.Row="8">
+                        
+                        <TextBox Grid.Row="8" x:Name="Comment"
+                             HorizontalAlignment="Left" VerticalAlignment="Top"
+                             Height="auto" Margin="5" FontFamily="TrebuchetMS"
+                             FontSize="15" TextWrapping="Wrap"
+                             materialDesign:HintAssist.Hint="Введите комментарий к заказу"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="10" x:Name="ButtonConfirmOrder"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Height="30" Width="160" BorderBrush="Black"
+                            Background="	#6b8762" Content="Оформить" Click="ButtonConfirmOrder_Click"/>
+                    <Rectangle Grid.Row="3" Height="2" Fill="Black" Margin="5 0"/>
+                    <Rectangle Grid.Row="5" Height="2" Fill="Black" Margin="5 0"/>
+                    <Rectangle Grid.Row="7" Height="2" Fill="Black" Margin="5 0"/>
+                    <Rectangle Grid.Row="9" Height="2" Fill="Black"/>
+                </Grid>
+            </Border>
+            <ScrollViewer Grid.Column="1">
+                <StackPanel x:Name="ListOfTitles">
+                    <Border Margin="10" Background="#FBCEB1" 
+                        CornerRadius="10" BorderBrush="Black" BorderThickness="2"
+                        Height="150" VerticalAlignment="Top">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="Black" ShadowDepth="0" />
+                        </Border.Effect>
+                        <Grid>
+                            <Button   Click="DeletePosition_Click"
+                                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                                    Margin="10" BorderBrush="Black">
+                                <Image Source="/Images/src/Bin.png"/>
+                            </Button>
+                            <Image Source="/Images/Products/Uha.png"
+                               VerticalAlignment="Top" HorizontalAlignment="Left"
+                               Margin="10 10 0 0" Width="140"/>
+                            <Border VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                               Margin="10" Width="140" BorderBrush="Black"
+                                BorderThickness="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Количество " Margin="5 0"
+                                           FontFamily="TrebuchetMS" FontSize="13"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <ComboBox FontFamily="TrebuchetMS" FontSize="13"
+                                      VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <ComboBoxItem Content="1"/>
+                                        <ComboBoxItem Content="2"/>
+                                        <ComboBoxItem Content="3"/>
+                                        <ComboBoxItem Content="4"/>
+                                        <ComboBoxItem Content="5"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </Border>
+                            <StackPanel>
+                                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left"
+                                   Text="Уха" Margin="170 10" FontSize="15" FontWeight="Bold"
+                                   FontFamily="TrebuchetMS"/>
+                                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="90"
+                                   Text="Идёт описание ухи" Margin="170 0" FontSize="13" 
+                                   FontFamily="TrebuchetMS"/>
+                            </StackPanel>
+                            <TextBlock
+                                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                                    
+                                    Margin="80 0" FontSize="13" FontFamily="TrebuchetMS"
+                                    Text="150р/шт"/>
+                        </Grid>
+                    </Border>
+
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>
